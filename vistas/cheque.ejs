@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Cheques</title>
+  	<%- include('cabeza'); %>
+  </head>
+<body>
+<div ng-app="chequeApp" ng-controller="chequeCtrl" id="chequeCtrl" class="container">
+	
+<div class="planilla">
+	<table>
+		<tr>
+			<td>
+				<fieldset>
+					<legend>Importe a pagar</legend>
+					$ <input type="text" id="importe" ng-model="cheque[0].importe"> 
+					<button onclick="convertir()">Convertir a letras</button>
+ 				</fieldset>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<fieldset>
+				<legend>Fecha de Emisión</legend>
+				ROSARIO <input type="text" placeholder="Día..." class="dia" maxlength="2" ng-model="cheque[0].emisionDia"> 
+				DE <select ng-model="cheque[0].emisionMes">
+					<%- include('listaMeses'); %>
+				   </select>
+				DE <input type="text" placeholder="Año..." class="anio" maxlength="4" ng-model="cheque[0].emisionAnio">
+			</fieldset>
+			</td>
+			<td><input type="text" id="fecha1"></td>
+		</tr>
+		<tr>
+			<td>
+				<fieldset>
+					<legend>Fecha de Pago</legend>
+					EL <input type="text" placeholder="Día..." class="dia" maxlength="2" ng-model="cheque[0].pagoDia"> 
+					DE <select ng-model="cheque[0].pagoMes">
+							<%- include('listaMeses'); %>
+				   	   </select>
+					DE <input type="text" placeholder="Año" class="anio" maxlength="4" ng-model="cheque[0].pagoAnio">
+				</fieldset>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<fieldset>
+					<legend>Destinaario</legend>
+					PAGUESE A <input type="text" placeholder="Nombre destinatario" class="destino" maxlength="50" ng-model="cheque[0].destino">
+				</fieldset>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<fieldset>
+					<legend>Importe en letras</legend>
+					LA CANTIDAD DE PESOS <input type="text" placeholder="Importe con letras... 1/2" class="importeLetras1" ng-model="cheque[0].importeLetras1">
+					<br> <input type="text" placeholder="Importe con letras... 2/2" class="importeLetras2" ng-model="cheque[0].importeLetras2">
+				</fieldset>
+			</td>
+		</tr>
+	</table>
+	<br>
+	<a href="javascript:window.print()">Imprimir</a>
+	<br><br>
+</div>
+
+<div class="cheque">
+	<%- include('plantillaCheque'); %>
+</div>
+
+</div>
+
+</body>
+</html>

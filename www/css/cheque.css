@@ -1,0 +1,48 @@
+.cheque {
+	font-family: "Lucida Console";
+	background: gray;
+	color: black;
+	font-size: 3mm;
+	font-weight: bold;
+	position: relative;
+	width: 20.3cm;
+	height: 7.6cm;
+	background-image: url('/img/cheque.jpg');
+	background-repeat: no-repeat;
+    background-size: 19.3cm 7.6cm;
+    background-position: 1.1cm 0;
+}
+.cheque span {
+	position: absolute;
+
+}
+@media print {
+     @page {
+     	size: A4 portrait;
+     	margin-top:  -4mm;			/* AJUSTES DE BORDE DE IMPRESION */
+     	margin-left: -5mm;
+     }
+     .planilla {
+     	display: none;
+     }
+     .cheque {
+     	color: black;
+     	background: none;
+     }
+}
+
+.dia {
+	width: 30px;
+}
+.anio {
+	width: 60px;
+}
+.destino {
+	width: 400px;
+}
+.importeLetras1 {
+	width: 400px;
+}
+.importeLetras2 {
+	width: 500px;
+}
